@@ -12,11 +12,22 @@ iceCreamShop(['moose tracks'], 'moose tracks'); // true
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
-
 function iceCreamShop(flavors, favorite) {
-  // Your code here
+  let rest = flavors.slice(1);
+  let first = flavors[0];
+
+  if (!flavors.length) return false
+  
+  else if (first == favorite) return true;
+
+  return iceCreamShop(rest, favorite)
 }
 
+// console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
+// console.log(iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea')); // true
+console.log(iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio')); // false
+console.log(iceCreamShop(['moose tracks'], 'moose tracks')); // true
+console.log(iceCreamShop([], 'honey lavender')); // false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
